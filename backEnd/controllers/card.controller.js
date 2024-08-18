@@ -24,4 +24,14 @@ export const createCard = async (req,res) => {
     } catch (error) {
         console.log(error);
     }
-}
+};
+
+export const getAllCards = async (req,res) => {
+    try {
+        const cards = await Card.find();
+        console.log(cards);
+        return res.status(200).json(cards);
+    } catch (error) {
+        console.log(error);
+    }
+};
