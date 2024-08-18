@@ -1,5 +1,9 @@
+import MainPage from "./pages/MainPage";
+
 export default function App() {
   return (
-    <div>hellow </div>
+    <div>
+      <MainPage/>
+    </div>
   )
 }
