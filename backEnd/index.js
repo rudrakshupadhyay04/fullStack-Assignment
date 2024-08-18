@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
+import getRoutes from './routes/card.routes.js'
 
 dotenv.config();
 
@@ -18,6 +19,11 @@ app.get('/ping' , (req,res) => {
         message:"Server is running fine!!!"
     })
 })
+
+
+app.use(express.json())
+
+app.use('/helpCenter', getRoutes);
 
 
 app.listen(process.env.PORT, (req, res) => {
