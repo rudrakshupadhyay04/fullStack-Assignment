@@ -3,8 +3,11 @@ import mongoose from "mongoose";
 import dotenv from 'dotenv';
 import getRoutes from './routes/card.routes.js'
 import cors from 'cors';
+import path from 'path';
 
 dotenv.config();
+
+const __dir = path.resolve();
 
 const app = express();
 
@@ -33,6 +36,12 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use('/helpCenter', getRoutes);
+
+app.use(express.static(path.join(__dirname, '/frontEnd/dist')));
+
+app.get('*',(req,res) => {
+    res.sendFile(path.join(__dirname, 'frontEnd','dist','index.html'));
+})
 
 
 app.listen(process.env.PORT, (req, res) => {
