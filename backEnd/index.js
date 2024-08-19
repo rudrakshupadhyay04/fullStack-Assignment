@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
 import getRoutes from './routes/card.routes.js'
+import cors from 'cors';
 
 dotenv.config();
 
@@ -22,6 +23,14 @@ app.get('/ping' , (req,res) => {
 
 
 app.use(express.json())
+
+const corsOptions = {
+    origin: 'http://127.0.0.1:5173',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+}
+app.use(cors(corsOptions));
 
 app.use('/helpCenter', getRoutes);
 

@@ -1,12 +1,12 @@
 import Header from "../components/Header";
-import Home from "../components/Home";
 import Footer from "../components/Footer";
+import {Outlet} from 'react-router-dom';
 
 export default function MainPage() {
   return (
     <div className=" mx-2">
       <Header/>
-      <Home/>
+      <Outlet/>
       <Footer/>
     </div>
   )
