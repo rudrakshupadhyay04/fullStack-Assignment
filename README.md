@@ -28,9 +28,9 @@
 5. **BackEnd:**
    - use Postman to check all the api
    - go to  localhost:3000/helpCenter/cards with post request to create a new card.
+
    **note:-** Dont forgot to pass the title and description in the body.
    - go to localhost:3000/helpCenter/cards with get request to fetch all the cards.
-   
    -go to localhost:3000/helpCenter/cards/searchKeyword with get request to search a particular card with title.
 
    **note:-** Replace the searchKeyword with any title of the card or any search string
